@@ -25,6 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install robotframework
         pip install robotframework-selenium2library
+        pip install selenium
         
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
@@ -33,6 +34,6 @@ jobs:
         # flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         # flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with robotfrmewrok
+    - name: Test with python
       run: |
-         robot -T Tests\RENTALO.robot
+         python test1.py
